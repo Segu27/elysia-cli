@@ -136,25 +136,7 @@ const PLUGINS: Record<string, Preset> = {
     importName: "jwt",
     importFrom: "@elysiajs/jwt",
   }),
-  logger: {
-    pkgs: ["chalk"],
-    apply: (config) => {
-      scaffoldFile(join(config.srcDir, "utils", "logger.ts"), loggerTemplate());
-      const project = loadTsProject();
-      const app = { entry: config.appEntry, variable: config.appVariable };
-      const loggerPath = join(config.srcDir, "utils", "logger");
-      appendChain(project, app, loggerHooksSegment(), {
-        dedupe: "Logger.app.request",
-        ensureImports: [
-          {
-            names: ["Logger"],
-            moduleSpecifier: moduleSpecifierFrom(config.appEntry, loggerPath),
-          },
-        ],
-      });
-      replaceConsoleWithLogger(project, app, loggerPath);
-    },
-  },
+  
   prisma: {
     pkgs: ["@prisma/client"],
     devPkgs: ["prisma", "prismabox", "dotenv"],
@@ -257,6 +239,7 @@ const PLUGINS: Record<string, Preset> = {
               "--name",
               "add-auth",
             ]);
+            run("prisma generate", "bunx", ["prisma", "generate"]);
           }
         },
       };
@@ -291,6 +274,25 @@ const PLUGINS: Record<string, Preset> = {
         dedupe: "openapi(",
         ensureImports,
       });
+    },
+  },
+  logger: {
+    pkgs: ["chalk"],
+    apply: (config) => {
+      scaffoldFile(join(config.srcDir, "utils", "logger.ts"), loggerTemplate());
+      const project = loadTsProject();
+      const app = { entry: config.appEntry, variable: config.appVariable };
+      const loggerPath = join(config.srcDir, "utils", "logger");
+      appendChain(project, app, loggerHooksSegment(), {
+        dedupe: "Logger.app.request",
+        ensureImports: [
+          {
+            names: ["Logger"],
+            moduleSpecifier: moduleSpecifierFrom(config.appEntry, loggerPath),
+          },
+        ],
+      });
+      replaceConsoleWithLogger(project, app, loggerPath);
     },
   },
 };
