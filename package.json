@@ -1,6 +1,6 @@
 {
   "name": "@apc-projects/elysia-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Générateur de scaffolding pour projets ElysiaJS (modules, services, models, plugins).",
   "type": "module",
   "license": "MIT",
@@ -10,7 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/Segu27/elysia-cli.git"
   },
-  "keywords": ["elysia", "elysiajs", "cli", "scaffolding", "bun", "generator"],
+  "keywords": [
+    "elysia",
+    "elysiajs",
+    "cli",
+    "scaffolding",
+    "bun",
+    "generator"
+  ],
   "bin": {
     "elysia-cli": "./src/index.ts"
   },
