@@ -1,0 +1,44 @@
+{
+  "name": "@apc/elysia-cli",
+  "version": "0.1.0",
+  "description": "Générateur de scaffolding pour projets ElysiaJS (modules, services, models, plugins).",
+  "type": "module",
+  "license": "MIT",
+  "author": "Segu27",
+  "homepage": "https://github.com/Segu27/elysia-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Segu27/elysia-cli.git"
+  },
+  "keywords": ["elysia", "elysiajs", "cli", "scaffolding", "bun", "generator"],
+  "bin": {
+    "elysia-cli": "./src/index.ts"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "bun src/index.ts",
+    "start": "bun src/index.ts",
+    "build": "bun build src/index.ts --compile --outfile dist/elysia-cli",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "chalk": "^5.6.2",
+    "commander": "^12.1.0",
+    "ts-morph": "^23.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/bun": "^1.1.0",
+    "@types/node": "^20.19.43"
+  }
+}
