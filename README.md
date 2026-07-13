@@ -1,4 +1,4 @@
-# @apc/elysia-cli
+# @apc-projects/elysia-cli
 
 CLI de scaffolding pour projets **ElysiaJS**. Génère des modules (controller + service + model + plugin) suivant les bonnes pratiques Elysia, et **branche automatiquement** le plugin dans ton application via manipulation d'AST (ts-morph).
 
@@ -42,7 +42,7 @@ Pour l'utiliser comme binaire global pendant le dev :
 ```bash
 bun link                    # dans ce package
 cd ../mon-api-test
-bun link @apc/elysia-cli    # dans le projet cible
+bun link @apc-projects/elysia-cli    # dans le projet cible
 elysia-cli --help
 ```
 
@@ -59,21 +59,21 @@ bun run build               # bun build --compile -> dist/elysia-cli
 
 ### Via npm (recommandé)
 
-Après publication sur npm (`bun publish` / `npm publish` — le package est `@apc/elysia-cli`), on peut l'exécuter sans installation :
+Après publication sur npm (`bun publish` / `npm publish` — le package est `@apc-projects/elysia-cli`), on peut l'exécuter sans installation :
 
 ```bash
-bunx @apc/elysia-cli init mon-api
-bunx @apc/elysia-cli add prisma
+bunx @apc-projects/elysia-cli init mon-api
+bunx @apc-projects/elysia-cli add prisma
 ```
 
-`bunx` résout le **nom du package** (pas le nom du binaire), d'où `@apc/elysia-cli`. Les dépendances sont installées automatiquement au premier run puis mises en cache.
+`bunx` résout le **nom du package** (pas le nom du binaire), d'où `@apc-projects/elysia-cli`. Les dépendances sont installées automatiquement au premier run puis mises en cache.
 
 ### Via GitHub (sans publier sur npm)
 
 Bun sait installer depuis un dépôt Git. En dépendance de projet :
 
 ```bash
-bun add github:<owner>/<repo>        # ajoute @apc/elysia-cli au projet
+bun add github:<owner>/<repo>        # ajoute @apc-projects/elysia-cli au projet
 bunx elysia-cli init mon-api         # le binaire local est alors résolu
 ```
 

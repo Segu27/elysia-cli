@@ -1,5 +1,5 @@
 {
-  "name": "@apc/elysia-cli",
+  "name": "@apc-projects/elysia-cli",
   "version": "0.1.0",
   "description": "Générateur de scaffolding pour projets ElysiaJS (modules, services, models, plugins).",
   "type": "module",

@@ -6,13 +6,14 @@ import { registerGenerateCommand } from "./commands/generate.js";
 import { registerAddCommand } from "./commands/add.js";
 import { registerInitCommand } from "./commands/init.js";
 import { registerMacroCommand } from "./commands/macro.js";
+import pkg from "../package.json" with { type: "json" };
 
 const program = new Command();
 
 program
   .name("elysia-cli")
   .description("Scaffolding pour projets ElysiaJS")
-  .version("0.1.0");
+  .version(pkg.version);
 
 registerGenerateCommand(program);
 registerAddCommand(program);
