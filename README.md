@@ -2,6 +2,26 @@
 
 CLI de scaffolding pour projets **ElysiaJS**. Génère des modules (controller + service + model + plugin) suivant les bonnes pratiques Elysia, et **branche automatiquement** le plugin dans ton application via manipulation d'AST (ts-morph).
 
+## Prérequis
+
+Ce CLI est **Bun-only** : le binaire s'exécute avec Bun (le `bin` pointe sur du TypeScript). Node/`npx` n'est pas supporté.
+
+Installe Bun si ce n'est pas déjà fait :
+
+```bash
+# macOS / Linux
+curl -fsSL https://bun.sh/install | bash
+
+# Windows (PowerShell)
+powershell -c "irm bun.sh/install.ps1 | iex"
+```
+
+Vérifie l'installation :
+
+```bash
+bun --version
+```
+
 ## Stack
 
 - **Bun** — runtime (exécute le TypeScript directement, pas de build en dev)
@@ -144,3 +164,7 @@ src/
 ## Étendre
 
 Ajoute un générateur : nouvelle fonction dans `templates.ts` + branche-la dans `commands/generate.ts`. Pour un nouveau type d'injection, réutilise `utils/inject.ts` (basé sur ts-morph, donc robuste aux reformats).
+
+## Licence
+
+[MIT](./LICENSE) © Segu27
